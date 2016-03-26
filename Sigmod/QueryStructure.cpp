@@ -20,11 +20,13 @@ Index QueryStructure::preprocess(Graph * G)
 	}
 	for (size_t i = 0; i < G->getSize(); i++)//Graph Orders vertices itself according to their degrees
 	{
-		prunedBFS(G, i, &L);
+		prunedBFS(G, i, &L, false);
+		prunedBFS(G, i, &L,true);
+		
 	}
 	return L;
 }
-void QueryStructure::prunedBFS(Graph * G, uint32_t vk, Index * L)
+void QueryStructure::prunedBFS(Graph * G, uint32_t vk, Index * L,bool isIn)
 {
 	queue <uint32_t> Q;
 	Q.push(vk);
@@ -35,8 +37,8 @@ void QueryStructure::prunedBFS(Graph * G, uint32_t vk, Index * L)
 		Q.pop();
 		if (L->query(vk, u, vk - 1)<=P[u])
 			continue;
-		L->addPairDistance(u, vk, P[u]);
-		set<uint32_t> neighbours = G->getNeighbours(u);
+		L->addPairDistance(u, vk, P[u],isIn);
+		set<uint32_t> neighbours = G->getNeighbours(u,isIn);
 		set<uint32_t>::iterator it = neighbours.begin();
 		for (; it != neighbours.end(); it++)
 		{

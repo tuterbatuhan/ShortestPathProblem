@@ -11,7 +11,7 @@ public:
 	~QueryStructure();
 	Index preprocess(Graph * G);
 private:
-	void prunedBFS(Graph * G, uint32_t vertex,Index * index);
+	void prunedBFS(Graph * G, uint32_t vertex,Index * index,bool);
 	uint32_t * P;
 	queue<uint32_t> visited;
 };
