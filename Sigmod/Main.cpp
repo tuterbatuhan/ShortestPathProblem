@@ -68,5 +68,5 @@ int main(int argc, const char* argv[])
 			break;
 		}
 	}
-	system("pause");
+	//system("pause");
 }
