@@ -79,10 +79,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Graph.h" />
+    <ClInclude Include="Index.h" />
     <ClInclude Include="QueryStructure.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Graph.cpp" />
+    <ClCompile Include="Index.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="QueryStructure.cpp" />
   </ItemGroup>

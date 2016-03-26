@@ -35,3 +35,11 @@ void Graph::print()
 		printf("\n");
 	}
 }
+std::set<uint32_t> Graph::getNeighbours(uint32_t v1)
+{
+	return list[v1];
+}
+uint32_t Graph::getSize()
+{
+	return list.size();
+}
